@@ -1,6 +1,6 @@
 INTRODUCTION TO VIEW
 
-#VUE SYNTAX
+# VUE SYNTAX
   <div id="app">
     {{ message }} <!-- referenced in data below-->
   </div>
@@ -14,7 +14,7 @@ INTRODUCTION TO VIEW
     })
   </script>
 
-#Directives
+# Directives
 Special attribute provided by Vue. Applies reactive behavior to the rendered DOM.
   * v-bind:title
     - keeps the element's attribute up to date with the property on the Vue instance
@@ -40,7 +40,7 @@ Special attribute provided by Vue. Applies reactive behavior to the rendered DOM
     - says that this reference can only be a number
         ex: <input type="number" v-model.number="product.quantity">
 
-#Components
+# Components
 A Vue instance with pre-defined options
   * Define a new component, provide a name, provide props, provide template which shows what to display
       Vue.component('PROVIDE-NAME-FOR-COMPONENT', {

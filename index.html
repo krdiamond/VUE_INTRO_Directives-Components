@@ -1,14 +1,43 @@
-<div id="app">
+<!-- text to be displayed on page -->
+<div id="singleItem">
     <h2>{{ product }} are in stock.<h2>
+    <!-- product is the key of the data object in the new instance of vue below -->
 </div>
 
+<div id="arrayOfItems">
+    <ul>
+      <li v-for="product in arrayOfProducts">
+        <!-- v-for is a vue command, creates a reference to each product in the arrayOfProducts -->
+        <!-- only looking to display each product, so just write product -->
+        {{ product }}
+      </li>
+    </ul>
+</div>
+
+
+<!-- must include this link to use vue -->
 <script src="https://unpkg.com/vue"></script>
 
+
 <script>
-  const app = new Vue ({
-    el: '#app',
-    data: {
-      product: 'Boots'
+  const singleItem = new Vue ({ //inside javascript create a new instance of vue
+    el: '#singleItem', //provide an element that will be effected
+    data: { // create a "data" object to hold the data to be displayed
+      product: 'Boots' // data to be displayed, view is reactive so when data changes, vue will update and the text on the page will change
     }
+  })
+</script>
+
+
+<script>
+  const arrayOfItems = new Vue ({
+    el: '#arrayOfItems',
+    data: {
+      arrayOfProducts:[
+        {"id":1, "quantity":1, "name": 'Compass'},
+        {"id":2, "quantity":0, "name": 'Jacket'},
+        {"id":3, "quantity":5, "name": 'Hiking Socks'},
+        {"id":4, "quantity":2, "name": 'Suntan Lotion'},
+      ]}
   })
 </script>

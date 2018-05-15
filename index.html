@@ -1,7 +1,12 @@
 <!-- text to be displayed on page -->
 
-<div id="arrayOfItems">
-  <h2> Inventory </h2>
+<div id="app-2">
+  <span v-bind:title="message">
+    <h2> Inventory </h2>
+  </span>
+</div>
+
+<div id="app">
     <ul>
       <li v-for="product in arrayOfProducts">
         <!-- VUE CODE v-for: creates a reference to each product in the arrayOfProducts -->
@@ -24,12 +29,14 @@
 </div>
 
 
+
+
 <!-- must include this link to use vue -->
 <script src="https://unpkg.com/vue"></script>
 
 <script>
-  const arrayOfItems = new Vue ({
-    el: '#arrayOfItems',
+  const app = new Vue ({
+    el: '#app',
     data: {
       arrayOfProducts:[
         {"id":1, "quantity":1, "name": 'Compass'},
@@ -45,6 +52,13 @@
         }, 0)
       }
     }
-
   })
+
+  const app2 = new Vue({
+    el: '#app-2',
+    data: {
+      message: "RIGHT NOW, YOU ARE HOVERING, IT'S TRUE"
+    }
+  })
+
 </script>

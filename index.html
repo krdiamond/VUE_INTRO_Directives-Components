@@ -9,7 +9,10 @@
       <li v-for="product in arrayOfProducts">
         <!-- v-for is a vue command, creates a reference to each product in the arrayOfProducts -->
         <!-- only looking to display each product, so just write product -->
-        {{ product }}
+        <!-- reference specific keys to display simpler text -->
+        {{ product.quantity }} {{ product.name }}
+        <span v-if="product.quantity === 0">
+          - OUT OF STOCK
       </li>
     </ul>
 </div>

@@ -21,7 +21,7 @@ Special attribute provided by Vue. Applies reactive behavior to the rendered DOM
   * v-bind:title
     - keeps the element's attribute up to date with the property on the Vue instance
     - The title is what shows up on hover
-        `ex: <span v-bind:title="message"> <h2>Inventory</h2> </span>`
+    `ex: <span v-bind:title="message"> <h2>Inventory</h2> </span>`
   * v-if
     - Creates an if statement, if something is something do something
         `ex: <span v-if="product.quantity === 0"> OUT OF STOCK </span>`

@@ -1,12 +1,15 @@
 <!-- text to be displayed on page -->
 
 <div id="arrayOfItems">
+  <h2> Inventory </h2>
     <ul>
       <li v-for="product in arrayOfProducts">
         <!-- VUE CODE v-for: creates a reference to each product in the arrayOfProducts -->
         <!-- only looking to display each product, so just write product -->
         <!-- reference specific keys to display simpler text -->
-        {{ product.quantity }} {{ product.name }}
+        <input type="number" v-model.number="product.quantity">
+        <!-- creates an input area where you can input only a number for the qty -->
+         {{ product.name }}
         <span v-if="product.quantity === 0">
           - OUT OF STOCK
         <!-- VUE CODE v-if: creates an if statement, if prod.qty = 0 display out of stock message -->
@@ -17,7 +20,7 @@
         </button>
       </li>
     </ul>
-    <h2> Total Inventory: {{ totalProducts }}</h2>
+    <p> Total Inventory: {{ totalProducts }}</p>
 </div>
 
 

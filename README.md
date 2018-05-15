@@ -14,3 +14,7 @@ V-IF
 - Creates a click event, this example is used on a button
 - Tell the click event what you want it to do
     ex: @click="product.quantity += 1"
+
+v-model.number
+- tells an input space that it can only be a number
+    ex: <input type="number" v-model.number="product.quantity">

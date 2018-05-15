@@ -17,7 +17,7 @@ INTRODUCTION TO VIEW
 #Directives
 Special attribute provided by Vue. Applies reactive behavior to the rendered DOM.
   * v-bind:title
-    - keeps the element's title attribute up to date with the message property on the Vue instance
+    - keeps the element's attribute up to date with the property on the Vue instance
     - The title is what shows up on hover
         ex: <span v-bind:title="message"> <h2>Inventory</h2> </span>
   * v-if
@@ -39,3 +39,16 @@ Special attribute provided by Vue. Applies reactive behavior to the rendered DOM
   * v-model.number
     - says that this reference can only be a number
         ex: <input type="number" v-model.number="product.quantity">
+
+#Components
+A Vue instance with pre-defined options
+  * Define a new component, provide a name, provide props, provide template which shows what to display
+      Vue.component('PROVIDE-NAME-FOR-COMPONENT', {
+        props: ['todo'],
+        template: '<li>{{ todo.text }}</li>'
+      })
+  * When displaying the component
+    - Use v-for to declare the singular of the multiple array
+    - Use v-bind:COMPONENT-NAME keeps the element's attribute up to date with the property on the Vue instance
+    - Set the v-bind to the individual item from the list to display
+    - use a v-bind:key (not sure what this does yet)

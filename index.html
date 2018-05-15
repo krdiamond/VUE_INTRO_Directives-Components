@@ -1,12 +1,12 @@
 <!-- text to be displayed on page -->
 
-<div id="app-2">
+<div id="app">
   <span v-bind:title="message">
     <h2> Inventory </h2>
   </span>
 </div>
 
-<div id="app">
+<div id="app-2">
     <ul>
       <li v-for="product in arrayOfProducts">
         <!-- VUE CODE v-for: creates a reference to each product in the arrayOfProducts -->
@@ -28,6 +28,17 @@
     <p> Total Inventory: {{ totalProducts }}</p>
 </div>
 
+<div id="app-3">
+  <ol>
+    <!-- provide each todo-item with the todo object it's representing, so that its content can be dynamic. -->
+    <todo-item
+      v-for="item in groceryList"
+      v-bind:todo="item"
+      v-bind:key="item.id">
+    </todo-item>
+  </ol>
+</div>
+
 
 
 
@@ -35,8 +46,15 @@
 <script src="https://unpkg.com/vue"></script>
 
 <script>
-  const app = new Vue ({
-    el: '#app',
+
+const app = new Vue({
+  el: '#app',
+  data: {
+    message: "RIGHT NOW, YOU ARE HOVERING, IT'S TRUE"
+  }
+})
+  const app2 = new Vue ({
+    el: '#app-2',
     data: {
       arrayOfProducts:[
         {"id":1, "quantity":1, "name": 'Compass'},
@@ -54,10 +72,19 @@
     }
   })
 
-  const app2 = new Vue({
-    el: '#app-2',
+  Vue.component('todo-item', {
+    props: ['todo'],
+    template: '<li>{{ todo.text }}</li>'
+  })
+
+  var app3 = new Vue({
+    el: '#app-3',
     data: {
-      message: "RIGHT NOW, YOU ARE HOVERING, IT'S TRUE"
+      groceryList: [
+        { id: 0, text: 'Vegetables' },
+        { id: 1, text: 'Cheese' },
+        { id: 2, text: 'Whatever else humans are supposed to eat' }
+      ]
     }
   })
 
